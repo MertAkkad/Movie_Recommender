@@ -1,5 +1,5 @@
-# This file is not directly used in the app.
-# The required embeddings are already generated and saved into sbert_embeddings.npz
+# This file is not directly used in the app but needs to be run at the beggining for once.
+# Running this file is needed to generate Sbert embeddings and save it as .npz file so it can be used in other modules.
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
