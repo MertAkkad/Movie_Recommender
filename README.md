@@ -5,7 +5,8 @@
 
 
 ## Overview
-The Movie Recommender project is a web application designed to help users discover movies based on their text prompts. By leveraging advanced natural language processing techniques and efficient similarity search algorithms, the application provides users with relevant movie recommendations.
+The Movie Recommender project is a web application designed to help users discover movies based on their text prompts. By leveraging natural language processing techniques and efficient similarity search algorithms, the application provides users with relevant movie recommendations.
+*** This project is created on linux OS ***
 
 ## How It Works
 The Movie Recommender operates through the following steps:
@@ -24,10 +25,12 @@ The Movie Recommender operates through the following steps:
 
 ## Project Structure
 The project is organized into the following main files and directories:
-
+- `Embedding_Generator.py`: Generates Sbert embeddings of the movie dataset and saves them into .npz file for later use.
+- `Faiss_Vornoi_Generator`: Initializes Faiss index and clusterizes the embedding vector space for efficient similarity search.
+- `Find_Movies.py`: This is where the faiss searching method is called(Written separately for organization purposes). 
+- `web_app.py`: The main Flask application file that handles routing and logic.
 - `templates/index.html`: The main HTML file that contains the structure of the web page.
-- `app.py`: The main Flask application file that handles routing and logic.
-- `static/`: A directory for static files such as CSS and JavaScript.
+
 
 ## Installation
 To run the Movie Recommender project locally, follow these steps:
@@ -48,13 +51,20 @@ To run the Movie Recommender project locally, follow these steps:
    ```bash
    pip install -r requirements.txt
    ```
-
-4. Run the application:
+4. Generate the Embeddings(** Make sure that the created .npz file has the same name as the .npz being loaded in Faiss_vorinoi_Generator **):
    ```bash
-   python app.py
+   python Embediing_Generator.py
    ```
 
-5. Open your web browser and navigate to `http://127.0.0.1:5000`.
+5. Run the application:
+   ```bash
+   python web_app.py
+   ```
+
+6. Open your web browser and navigate to `http://127.0.0.1:5000`.
 
 ## Conclusion
 The Movie Recommender project demonstrates a simple yet effective way to leverage web technologies, natural language processing, and efficient similarity search algorithms for movie discovery. By combining Flask with SBERT and FAISS, users can easily find movies that match their interests based on textual prompts.
+## References
+- Dataset: The movies_with_keywords.csv is derived from kaggle's movie_dataset "https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset".
+
