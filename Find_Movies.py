@@ -1,5 +1,4 @@
 
-import time
 class Find_Movies:
     def __init__(self,faiss_Vor_index,user_embeddings,top_k):
         # Add the clustered index

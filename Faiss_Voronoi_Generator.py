@@ -1,6 +1,5 @@
 # This class generates clusters/voronois in order to achieve faster similarity calculation.
 import faiss
-from Embedding_Generator import Embedding_Generator
 import numpy as np
 class Faiss_Voronoi_Generator:
     

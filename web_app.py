@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request
-from Embedding_Generator import Embedding_Generator
 from Faiss_Voronoi_Generator import Faiss_Voronoi_Generator
 from Find_Movies import Find_Movies
 from sentence_transformers import SentenceTransformer
 import pandas as pd
-import numpy as np
+
 
 app = Flask(__name__)
 
